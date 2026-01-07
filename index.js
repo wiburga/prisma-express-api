@@ -1,13 +1,10 @@
-const express = require('express')
 require('dotenv').config()
 
-const userRoutes = require('./src/routes/user.routes')
-
-const app = express()
-app.use(express.json())
-
-app.use('/users', userRoutes)
-
-app.listen(3000, () => {
-  console.log('🚀 API corriendo en http://localhost:3000')
-})
+// In production we run the compiled JS in dist/
+if (process.env.NODE_ENV === 'production') {
+  require('./dist/server.js')
+} else {
+  // In development use ts-node-dev (via npm script) to run TS directly.
+  // This file exists for compatibility and to start the compiled server in prod.
+  console.log('Run `npm run dev` for development (typescript)')
+}

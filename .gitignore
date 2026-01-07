@@ -1,6 +1,16 @@
-node_modules
-# Keep environment variables out of version control
+# Node
 node_modules/
-.env
+
+# Build output
 dist/
+
+# Environment
+.env
+
+# Prisma
 .prisma/
+
+# Optional editor files
+.vscode/
+*.log
+

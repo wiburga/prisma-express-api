@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+.neon-glow-blue {
+  text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+}
+
+.neon-glow-purple {
+  text-shadow: 0 0 10px #d946ef, 0 0 20px #d946ef;
+}
+
+/* Smooth transitions */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-neon-green to-neon-blue text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-neon-green/50 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-800 text-gray-200 rounded-lg hover:bg-gray-700 transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-gray-900 rounded-lg border border-gray-800 shadow-lg;
+  }
+}
